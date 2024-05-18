@@ -12,7 +12,6 @@ public class PlayerInput : MonoBehaviour
 	[HideInInspector] public bool jumpHeld;
 	[HideInInspector] public bool jumpPressed;
 
-	bool dPadCrouchPrev;
 	bool readyToClear;
 	
 	void Update()
