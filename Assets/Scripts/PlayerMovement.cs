@@ -65,8 +65,8 @@ public class PlayerMovement : MonoBehaviour
 	{
 		isOnGround = false;
 
-		RaycastHit2D leftCheck = Raycast(new Vector2(-footOffset, 0f), Vector2.down, groundDistance);
-		RaycastHit2D rightCheck = Raycast(new Vector2(footOffset, 0f), Vector2.down, groundDistance);
+		RaycastHit2D leftCheck = Raycast(new Vector2(-footOffset, -0.1f), Vector2.down, groundDistance);
+		RaycastHit2D rightCheck = Raycast(new Vector2(footOffset, -0.1f), Vector2.down, groundDistance);
 		if (leftCheck || rightCheck)
 			isOnGround = true;
 	}
