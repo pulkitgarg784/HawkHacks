@@ -30,10 +30,7 @@ public class PlayerMovement : MonoBehaviour
 	float originalXScale;
 	int direction = 1;
 
-	Vector2 colliderStandSize;
-	Vector2 colliderStandOffset;
 
-	private float playerHeight;
 	
 	void Start ()
 	{
@@ -42,10 +39,6 @@ public class PlayerMovement : MonoBehaviour
 		bodyCollider = GetComponent<BoxCollider2D>();
 
 		originalXScale = transform.localScale.x;
-		playerHeight = bodyCollider.size.y;
-
-		colliderStandSize = bodyCollider.size;
-		colliderStandOffset = bodyCollider.offset;
 	}
 
 	void FixedUpdate()
@@ -53,7 +46,6 @@ public class PlayerMovement : MonoBehaviour
 		PhysicsCheck();
 		GroundMovement();		
 		MidAirMovement();
-		Debug.Log(rigidBody.velocity.y);
 		
 		if(rigidBody.velocity.y > 15){
 			rigidBody.velocity = new Vector2(rigidBody.velocity.x, 15);
