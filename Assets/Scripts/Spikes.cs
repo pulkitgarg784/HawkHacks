@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spikes : MonoBehaviour
 {
-	private playerHealth playerHealth;
+	[SerializeField] private playerHealth playerHealth;
     // Start is called before the first frame update
     void Start()
     {
