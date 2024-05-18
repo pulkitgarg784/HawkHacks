@@ -53,6 +53,11 @@ public class PlayerMovement : MonoBehaviour
 		PhysicsCheck();
 		GroundMovement();		
 		MidAirMovement();
+		Debug.Log(rigidBody.velocity.y);
+		
+		if(rigidBody.velocity.y > 15){
+			rigidBody.velocity = new Vector2(rigidBody.velocity.x, 15);
+		}   
 		
 		if (!isOnGround)
 		{

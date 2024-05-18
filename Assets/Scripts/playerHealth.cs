@@ -10,13 +10,14 @@ public class playerHealth : MonoBehaviour
 	public float health = 5;
 	public float coins = 0;
 
-	public Text healthtext;
-	public Text coinText;
+	[SerializeField] private float knockBackPwr;
+	//public Text healthtext;
+	//public Text coinText;
 
 	void Start()
     {
-		healthtext.text = "Health: " + health;
-		coinText.text = "Coins: " + coins;
+		//healthtext.text = "Health: " + health;
+		//coinText.text = "Coins: " + coins;
     }
     
 	void Die()
@@ -31,7 +32,8 @@ public class playerHealth : MonoBehaviour
 	{
 		health -= dmg;
 		gameObject.GetComponent<Animation>().Play("Damage");
-		healthtext.text = "Health: " + health;
+		//healthtext.text = "Health: " + health;
+		
 		//transform.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 		//transform.position = new Vector3(0, 0, 0);
 
@@ -41,20 +43,21 @@ public class playerHealth : MonoBehaviour
 	{
 		coins += coin;
 		gameObject.GetComponent<Animation>().Play("CoinPick");
-		coinText.text = "Coins: " + coins;
+		//coinText.text = "Coins: " + coins;
+		
 		//transform.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 		//transform.position = new Vector3(0, 0, 0);
 
 		Die();
 	}
-	public IEnumerator KnockBack(float knockDur,float knockBackPwr,Vector3 knockBackDir)
+	public IEnumerator KnockBack(float knockDur,Vector3 knockBackDir)
 	{
 		float timer = 0;
 		transform.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.GetComponent<Rigidbody2D>().velocity.x, 0);
 		while (knockDur>timer)
 		{
 			timer += Time.deltaTime;
-			transform.GetComponent<Rigidbody2D>().AddForce(new Vector3(knockBackDir.x + 20, knockBackDir.y + knockBackPwr, transform.position.z));
+			transform.GetComponent<Rigidbody2D>().AddForce(new Vector3(knockBackDir.x -200 , knockBackDir.y + knockBackPwr, transform.position.z));
 
 		}
 		yield return 0;
