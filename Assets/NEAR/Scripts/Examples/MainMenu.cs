@@ -19,5 +19,10 @@ public class MainMenu : MonoBehaviour
   {
     SceneManager.LoadScene("MenuScene");
   }
+  
+  public void LevelCreate()
+  {
+    SceneManager.LoadScene("Level Creation");
+  }
 
 }
