@@ -79,8 +79,6 @@ public class levelManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        jsonOutput.text =
-            "[[\"s2\", \"0\", \"0\"],[\"sp\", \"13\", \"-10\"],[\"sp\", \"6\", \"-8\"],[\"sp\", \"-4\", \"-8\"],[\"sp\", \"0\", \"-10\"],[\"sp\", \"2\", \"-2\"],[\"tu\", \"-2\", \"1.5\"],[\"tu\", \"1\", \"3.5\"],[\"tu\", \"7.5\", \"3.5\"],[\"tu\", \"13\", \"3.5\"],[\"pl\", \"7\", \"3\"],[\"pl\", \"12\", \"3\"]]";
     }
 
     public void loadLevel()
