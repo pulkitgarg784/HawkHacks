@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class chestTrigger : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class chestTrigger : MonoBehaviour
             Debug.Log("WOOHOO. I FOUND THE PLAYER");
             isOpened = true;
             animator.SetBool("IsOpened", isOpened);
+            Invoke("NextLevel", 2f);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -23,5 +25,10 @@ public class chestTrigger : MonoBehaviour
             isOpened = false;
             animator.SetBool("IsOpened", isOpened);
         }
+    }
+    public void NextLevel()
+
+    {
+        SceneManager.LoadScene("You Won");
     }
 }

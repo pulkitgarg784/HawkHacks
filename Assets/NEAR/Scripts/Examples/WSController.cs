@@ -49,6 +49,7 @@ public class WSController : MonoBehaviour
 
   public void SignInOut()
   {
+    Debug.Log("Trying to sign in");
     if (_signedIn)
     {
       NearWSAPI.WS_SignOut();
