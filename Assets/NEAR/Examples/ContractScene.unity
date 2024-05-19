@@ -3316,6 +3316,10 @@ MonoBehaviour:
   levelPrefab: {fileID: 9186011477634062742, guid: baecd2b2133b646dd9ea35d6657d7876, type: 3}
   spikePrefab: {fileID: 8351128436791311212, guid: ac95b7fb76359450ca1f932c823f5234, type: 3}
   turretPrefab: {fileID: 4340226155167699595, guid: 138e7c6246a13d54c8f5889d1fe4f98b, type: 3}
+  platformPrefab: {fileID: 1507689060814006058, guid: 26258b99cd8814c6ba250c949d634520, type: 3}
+  sky1Prefab: {fileID: 7266185132343013606, guid: b649d1be822ba495babfb8e2e6159039, type: 3}
+  sky2Prefab: {fileID: 7266185132343013606, guid: e56c042c2544243d5b864e714b65f8c3, type: 3}
+  sky3Prefab: {fileID: 7266185132343013606, guid: 3176dc212c7524ae982f4734c10c4fb7, type: 3}
 --- !u!1 &2067076416
 GameObject:
   m_ObjectHideFlags: 0
