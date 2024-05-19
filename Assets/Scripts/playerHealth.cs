@@ -8,16 +8,13 @@ using UnityEngine.SceneManagement;
 public class playerHealth : MonoBehaviour
 {
 	public float health = 5;
-	public float coins = 0;
 
 	[SerializeField] private float knockBackPwr;
-	//public Text healthtext;
-	//public Text coinText;
+	public Text healthtext;
 
 	void Start()
     {
-		//healthtext.text = "Health: " + health;
-		//coinText.text = "Coins: " + coins;
+		healthtext.text = "Health: " + health;
     }
     
 	void Die()
@@ -32,18 +29,7 @@ public class playerHealth : MonoBehaviour
 	{
 		health -= dmg;
 		gameObject.GetComponent<Animation>().Play("Damage");
-		//healthtext.text = "Health: " + health;
-		
-		//transform.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-		//transform.position = new Vector3(0, 0, 0);
-
-		Die();
-	}
-	public void AddMoney(float coin)
-	{
-		coins += coin;
-		gameObject.GetComponent<Animation>().Play("CoinPick");
-		//coinText.text = "Coins: " + coins;
+		healthtext.text = "Health: " + health;
 		
 		//transform.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 		//transform.position = new Vector3(0, 0, 0);

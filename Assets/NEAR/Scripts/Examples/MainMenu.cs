@@ -5,17 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-  public void NFTExample()
+  public void LevelSelect()
   {
-    SceneManager.LoadScene("NFTScene");
+    SceneManager.LoadScene("LoadLevel");
   }
 
-  public void ContractExample()
-  {
-    SceneManager.LoadScene("ContractScene");
-  }
-
-  public void WalletSelectorExample()
+  public void WalletSelect()
   {
     SceneManager.LoadScene("WSScene");
   }
