@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,17 +15,16 @@ public class levelManager : MonoBehaviour
     public GameObject levelPrefab;
     public GameObject spikePrefab;
     public GameObject turretPrefab;
-    // Method to parse the input string into a list of Coordinates
 
     void SpawnObjectsFromData(string data)
     {
-        // Correctly trim and handle the input string to avoid parsing issues
-        data = data.Trim('"').Trim('[').Trim(']'); // Remove only the first and last bracket
+        data = Regex.Unescape(data);
+        Debug.Log(data);
+        data = data.Trim('"').Trim('[').Trim(']');
         string[] entries = data.Split(new string[] { "],[" }, System.StringSplitOptions.RemoveEmptyEntries);
 
         foreach (string entry in entries)
         {
-            // Each entry is further cleaned and processed
             string cleanedEntry = entry.Trim(new char[] { '[', ']' });
             string[] parts = cleanedEntry.Split(',');
 
