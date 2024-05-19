@@ -41,6 +41,8 @@ public class ContractController : MonoBehaviour
     _inputNetwork.text = "testnet";
     _inputContractId.text = "nft-unity-contract.morganpage1.testnet";
     _inputMethodName.text = "nft_tokens_for_owner";
+    NearAPI.RequestSignIn(_inputContractId.text, _inputNetwork.text);//This will do a page refresh anyway
+    NearAPI.IsSignedIn(_inputNetwork.text);
   }
 
   private void OnSignIn(bool signedIn)
@@ -82,7 +84,14 @@ public class ContractController : MonoBehaviour
   public void CallContractMethod()
   {
     //{ account_id: account.accountId }
+    //change to call contract for getLevelData from pulkitgarg.testnet
     NearAPI.ContractMethod(_accountId, _inputContractId.text, _inputMethodName.text, _inputArgs.text, _IsChangeMethod.isOn, _inputNetwork.text);
+    
+  }
+
+  public void LoadLevel(string level) 
+  {
+    NearAPI.ContractMethod("testnet", "pulkitgarg.testnet", "getLevelData", "{\"levelName\": \"" + level + "\"}", false, "testnet");
   }
 
   void OnContractMethod(string json)
