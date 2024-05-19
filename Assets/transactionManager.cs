@@ -10,8 +10,7 @@ public class transactionManager : MonoBehaviour
     void Start()
     {
         Debug.Log("Trying to run transaction");
-        Debug.Log(Application.dataPath);
-        string FileName = Application.dataPath + "/foo/bar.sh";
+        string FileName = "Documents/Github/UnityProjects/HawkHacks/HackHawks/Assets/foo/bar.sh";
 
         RunShellScriptOSX(FileName);
     }
